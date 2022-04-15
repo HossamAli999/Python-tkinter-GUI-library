@@ -4,14 +4,14 @@ from PIL import Image, ImageTk
 import pymysql
 
 mypass="123"
-mydatabase="mydatabase"
+mydatabase="books_db"
 
 con = pymysql.connect(host="localhost", user="gui", password=mypass, database=mydatabase)
 cur = con.cursor()
 
 #declare the name of table
 issueTable = "books_issued"
-bookTable = "books"
+bookTable = "book"
 
 allBid = []  #to store all bokk ids which will issued.
 

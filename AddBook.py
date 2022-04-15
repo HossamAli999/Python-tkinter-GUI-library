@@ -41,13 +41,13 @@ def addBook():
     root.geometry("600x500")
 
     mypass="123"
-    mydatabase = "mydatabase"
+    mydatabase = "books_db"
 
     con = pymysql.connect(host="localhost", user="gui", password=mypass, database=mydatabase)
     cur = con.cursor()
 
     #enter the table name here
-    bookTable = "books" #book table
+    bookTable = "book" #book table
 
     #create the canvas for info
     Canvas1 = Canvas(root)

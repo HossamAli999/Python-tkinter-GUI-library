@@ -4,13 +4,13 @@ from PIL import Image, ImageTk
 import pymysql
 
 mypass="123"
-mydatabase="mydatabase"
+mydatabase="books_db"
 
 con = pymysql.connect(host="localhost", user="gui", password=mypass, database=mydatabase)
 cur = con.cursor()
 
 #declare the name of tables
-bookTable = "books"
+bookTable = "book"
 issue_Table = "books_issued"
 
 def deleteBook():
