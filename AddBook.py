@@ -22,10 +22,10 @@ def bookRegister():
     except:
         messagebox.showinfo('Error', "Can't add book to database")
 
-    print(bid)
-    print(title)
-    print(author)
-    print(status)
+    # print(bid)
+    # print(title)
+    # print(author)
+    # print(status)
 
     root.destroy()
 

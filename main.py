@@ -4,8 +4,7 @@ import pymysql
 from AddBook import *
 from ViewBooks import *
 from DeleteBook import *
-from IssueBook import *
-from ReturnBook import *
+
 
 #connect to mySQL server
 mypass="123"

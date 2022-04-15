@@ -29,7 +29,7 @@ def deleteBook():
     except:
         messagebox.showinfo("Error", "Please check Book Id")
 
-    print(bid)
+    # print(bid)
 
     bookInfo1.delete(0, END)
     root.destroy()
