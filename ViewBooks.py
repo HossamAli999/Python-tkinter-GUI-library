@@ -4,13 +4,13 @@ from tkinter import messagebox
 import pymysql
 
 mypass="123"
-mydatabase="mydatabase"
+mydatabase="books_db"
 
 con = pymysql.connect(host="localhost", user="gui", password=mypass, database=mydatabase)
 cur = con.cursor()
 
 #enter table names here
-bookTable = "books"
+bookTable = "book"
 
 def View():
 

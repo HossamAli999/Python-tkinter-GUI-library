@@ -1,5 +1,5 @@
 from tkinter import *
-from PIL import ImageTk, Image
+from turtle import width
 import pymysql
 from AddBook import *
 from ViewBooks import *
@@ -9,7 +9,7 @@ from ReturnBook import *
 
 #connect to mySQL server
 mypass="123"
-mydatabase = "mydatabase"   #name of database
+mydatabase = "books_db"   #name of database
 
 con = pymysql.connect(host="localhost", user="gui", password=mypass, database=mydatabase)
 
@@ -17,53 +17,38 @@ cur = con.cursor()
 
 # designing the window
 root = Tk()
-root.title("Library")
+root.title("Library  Management System")
 root.minsize(width=400, height=400)
 root.geometry("600x500")
+root.configure(background="#575fcf")
 
-#Add the background Image
-same = True
-n = 0.28
-background_image = Image.open("lib.jpg")
-[imageSizeWidth, imageSizeHeight] = background_image.size
-#set the new image width and height
-newImageSizeWidth = int(imageSizeWidth * n)
-
-if same:
-    newImageSizeHeight = int(imageSizeHeight * n)
-else:
-    newImageSizeHeight = int(imageSizeHeight / n)
-
-background_image = background_image.resize((newImageSizeWidth, newImageSizeHeight), Image.ANTIALIAS)
-
-#add an image to canva
-img = ImageTk.PhotoImage(background_image)
-canvas1 = Canvas(root)
-canvas1.create_image(300, 340, image=img)
-canvas1.config(bg="white", width=newImageSizeWidth, height=newImageSizeHeight)
-canvas1.pack(expand=True, fill=BOTH)
 
 #adding a heading Frame to library
-headingFrame1 = Frame(root, bg="#FFBB00", bd=5)
-headingFrame1.place(relx=0.2, rely=0.1, relwidth=0.6, relheight=0.16)
-headingLabel = Label(headingFrame1, text="Welcome to \n Crazy_Tech Librray", bg="black", 
-                fg="white", font=('Courier',15))
-headingLabel.place(relx=0, rely=0, relwidth=1, relheight=1)
+headingFrame1 = Frame(root, bg="#3c40c6", bd=5)
+headingFrame1.pack(pady=44)
+headingLabel = Label(headingFrame1, text="Welcome to \n Library Management System", bg="white", 
+                fg="#3c40c6", font=('rubik',15),width=40)
+headingLabel.pack(fill='both',ipady=12)
 
 #Add the buttons
-btn1 = Button(root, text="Add Book Details", bg="black", fg="white", command=addBook)
-btn1.place(relx=0.28, rely=0.4, relwidth=0.45, relheight=0.1)
+add_frame = Frame(root, bg="#3c40c6", bd=5)
+add_frame.pack(pady=10)
+add = Button(add_frame, text="Add Book Details", bg="white", bd=0 , width=35 ,fg="#3c40c6", command=addBook)
+add.pack(fill='both',ipady=12)
 
-btn2 = Button(root, text="Delete Book", bg="black", fg="white", command=delete)
-btn2.place(relx=0.28, rely=0.5, relwidth=0.45, relheight=0.1)
+view_frame = Frame(root, bg="#3c40c6", bd=5)
+view_frame.pack(pady=10)
+view = Button(view_frame, text="View book list", bg="white", bd=0 , width=35 ,fg="#3c40c6", command=View)
+view.pack(fill='both',ipady=12)
 
-btn3 = Button(root, text="View book list", bg="black", fg="white", command=View)
-btn3.place(relx=0.28, rely=0.6, relwidth=0.45, relheight=0.1)
+update_frame = Frame(root, bg="#3c40c6", bd=5)
+update_frame.pack(pady=10)
+update = Button(update_frame, text="Update Book", bg="white", bd=0 , width=35 ,fg="#3c40c6")
+update.pack(fill='both',ipady=12)
 
-btn4 = Button(root, text="Issue Book", bg="black", fg="white", command=issueBook)
-btn4.place(relx=0.28, rely=0.7, relwidth=0.45, relheight=0.1)
-
-btn5 = Button(root, text="Return Book", bg="black", fg="white", command=returnBook)
-btn5.place(relx=0.28, rely=0.8, relwidth=0.45, relheight=0.1)
+delete_frame = Frame(root, bg="#ff3f34", bd=5)
+delete_frame.pack(pady=10)
+delete = Button(delete_frame, text="Delete Book", bg="white", bd=0 , width=35 ,fg="#ff3f34", command=delete)
+delete.pack(fill='both',ipady=12)
 
 root.mainloop() #call the mainloop to run the application
