@@ -33,12 +33,14 @@ def bookRegister():
 # Now, we will make a func name add_book -> which will display form to add details
 # it will connect to server and fetch details, after call bookRegister to commit in dbs
 def addBook():
-    global bookInfo1, bookInfo2, bookInfo3, bookInfo4, Canvas1, cur, con, bookTable, root
+    global bookInfo1, bookInfo2, bookInfo3, bookInfo4, cur, con, bookTable, root
 
     root = Tk()
     root.title("Library")
     root.minsize(width=400, height=400)
     root.geometry("600x500")
+    root.configure(background="#575fcf")
+
 
     mypass="123"
     mydatabase = "books_db"
@@ -49,56 +51,53 @@ def addBook():
     #enter the table name here
     bookTable = "book" #book table
 
-    #create the canvas for info
-    Canvas1 = Canvas(root)
-    Canvas1.config(bg="#ff6e40")
-    Canvas1.pack(expand=True, fill=BOTH)
+
 
     #add a heading Frame
-    headingFrame1 = Frame(root, bg="#FFBB00", bd=5)
-    headingFrame1.place(relx=0.25, rely=0.1, relwidth=0.5, relheight=0.13)
+    headingFrame1 = Frame(root, bg="#3c40c6", bd=5)
+    headingFrame1.place(x=190, y=50)
 
-    headingLabel = Label(headingFrame1, text="Add Books", bg="black", fg="white", font=('Courier',15))
-    headingLabel.place(relx=0, rely=0, relwidth=1, relheight=1)
+    headingLabel = Label(headingFrame1,width=20, text="Add Books", bg="white", fg="#575fcf", font=('rubik',15))
+    headingLabel.pack(ipady=10)
 
-    #frame for form
-    LabelFrame = Frame(root, bg="black")
-    LabelFrame.place(relx=0.1, rely=0.4, relwidth=0.8, relheight=0.4)
+    #Frame of entries 
+    LabelFrame = Frame(root, bg="#3c40c6",width=500,height=230)
+    LabelFrame.place(x=48, y=140)
 
     #book ID
-    lb1 = Label(LabelFrame, text="Book Id: ", bg="black", fg="white")
-    lb1.place(relx=0.05, rely=0.2, relheight=0.08)
+    id_label = Label(LabelFrame, text="Book Id: ", bg="#3c40c6", fg="white")
+    id_label.place(x=30, y=40)
     #entry label for book Id
-    bookInfo1 = Entry(LabelFrame)
-    bookInfo1.place(relx=0.3, rely=0.2, relwidth=0.62, relheight=0.08)
+    bookInfo1 = Entry(LabelFrame,width=50)
+    bookInfo1.place(x=150, y=40)
 
     #title
-    lb2 = Label(LabelFrame, text="Title: ", bg="black", fg="white")
-    lb2.place(relx=0.05, rely=0.35, relheight=0.08)
+    title_label = Label(LabelFrame, text="Title: ", bg="#3c40c6", fg="white")
+    title_label.place(x=30,y=80)
     #entry for title
-    bookInfo2 = Entry(LabelFrame)
-    bookInfo2.place(relx=0.3, rely=0.35, relwidth=0.62, relheight=0.08)
+    bookInfo2 = Entry(LabelFrame,width=50)
+    bookInfo2.place(x=150, y=80)
 
     #author
-    lb3 = Label(LabelFrame, text="Author: ", bg="black", fg="white")
-    lb3.place(relx=0.05, rely=0.50, relheight=0.08)
+    author_label = Label(LabelFrame, text="Author: ", bg="#3c40c6", fg="white")
+    author_label.place(x=30,y=120)
     #entry for title
-    bookInfo3 = Entry(LabelFrame)
-    bookInfo3.place(relx=0.3, rely=0.50, relwidth=0.62, relheight=0.08)
+    bookInfo3 = Entry(LabelFrame,width=50)
+    bookInfo3.place(x=150, y=120)
 
     #Status
-    lb4 = Label(LabelFrame, text="Status: ", bg="black", fg="white")
-    lb4.place(relx=0.05, rely=0.65, relheight=0.08)
+    status_label = Label(LabelFrame, text="Status: ", bg="#3c40c6", fg="white")
+    status_label.place(x=30,y=160)
     #entry for title
-    bookInfo4 = Entry(LabelFrame)
-    bookInfo4.place(relx=0.3, rely=0.65, relwidth=0.62, relheight=0.08)
+    bookInfo4 = Entry(LabelFrame,width=50)
+    bookInfo4.place(x=150, y=160)
 
     #submit Button
-    SubmitBtn = Button(root, text="SUBMIT", bg="#d1ccc0", fg="black", command=bookRegister)
-    SubmitBtn.place(relx=0.28, rely=0.9, relwidth=0.18, relheight=0.08)
+    SubmitBtn = Button(root, text="SUBMIT", bg="#3c40c6", fg="white", command=bookRegister)
+    SubmitBtn.place(x=200,y=430,width=100,height=50)
 
     #Quit button
-    QuitBtn = Button(root, text="Quit", bg="#f7f1e3", fg="black", command=root.destroy)
-    QuitBtn.place(relx=0.53, rely=0.9, relwidth=0.18, relheight=0.08)
+    QuitBtn = Button(root, text="Quit", bg="#ff3f34", fg="white", command=root.destroy)
+    QuitBtn.place(x=330,y=430,width=100,height=50)
 
     root.mainloop()
