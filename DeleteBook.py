@@ -43,22 +43,22 @@ def delete():
     root.geometry("600x500")
 
     Canvas1 = Canvas(root)
-    Canvas1.config(bg="lightgreen")
+    Canvas1.config(bg="#575fcf")
     Canvas1.pack(expand=True, fill=BOTH)
 
-    headingFrame1 = Frame(root, bg="#FFBB00", bd=5)
+    headingFrame1 = Frame(root, bg="#3c40c6", bd=5)
     headingFrame1.place(relx=0.25, rely=0.1, relwidth=0.5, relheight=0.13)
 
     #add a leabel to heading Frame
-    headingLabel = Label(headingFrame1, text="Delete Book", bg="black", fg="white", font=('Courier',15))
+    headingLabel = Label(headingFrame1, text="Delete Book", bg="white", fg="#575fcf", font=('rubik',15))
     headingLabel.place(relx=0, rely=0, relwidth=1, relheight=1)
 
     #add a label frame to canvas to give a lebl insite it to delete book
-    LabelFrame = Frame(root, bg="black")
+    LabelFrame = Frame(root, bg="#3c40c6")
     LabelFrame.place(relx=0.1, rely=0.3, relwidth=0.8, relheight=0.5)
 
     #take a book ID to delete
-    lb2 = Label(LabelFrame, text="Book Id: ", bg="black", fg="white")
+    lb2 = Label(LabelFrame, text="Book Id: ", bg="#3c40c6", fg="white")
     lb2.place(relx=0.05, rely=0.5)
 
     bookInfo1 = Entry(LabelFrame)
