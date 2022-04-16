@@ -3,6 +3,7 @@ from turtle import width
 import pymysql
 from AddBook import *
 from ViewBooks import *
+from UpdateBook import updateBook
 from DeleteBook import *
 
 
@@ -18,7 +19,7 @@ cur = con.cursor()
 root = Tk()
 root.title("Library  Management System")
 root.minsize(width=400, height=400)
-root.geometry("600x500")
+root.geometry("600x600")
 root.configure(background="#575fcf")
 
 
@@ -42,9 +43,12 @@ view.pack(fill='both',ipady=12)
 
 update_frame = Frame(root, bg="#3c40c6", bd=5)
 update_frame.pack(pady=10)
-update = Button(update_frame, text="Update Book", bg="white", bd=0 , width=35 ,fg="#3c40c6")
+update = Button(update_frame, text="Update Book", bg="white", bd=0 , width=35 ,fg="#3c40c6",command=updateBook)
 update.pack(fill='both',ipady=12)
-
+search_frame = Frame(root, bg="#3c40c6", bd=5)
+search_frame.pack(pady=10)
+search = Button(search_frame, text="Search Book", bg="white", bd=0 , width=35 ,fg="#3c40c6")
+search.pack(fill='both',ipady=12)
 delete_frame = Frame(root, bg="#ff3f34", bd=5)
 delete_frame.pack(pady=10)
 delete = Button(delete_frame, text="Delete Book", bg="white", bd=0 , width=35 ,fg="#ff3f34", command=delete)
