@@ -17,9 +17,9 @@ def getBook():
                 record = cur.fetchone()
 
                 print(record[1])
-                bookInfo2.insert(END,record[1])
-                bookInfo3.insert(END,record[2])
-                bookInfo4.insert(END,record[3])
+                bookInfo2.config(text = record[1])
+                bookInfo3.config(text = record[2])
+                bookInfo4.config(text = record[3])
                 #for row in records:
                 #        bookInfo2.setvar(row["title"])
 
@@ -79,21 +79,21 @@ def searchBook():
     title_label = Label(LabelFrame, text="Title: ", bg="#3c40c6", fg="white")
     title_label.place(x=30,y=120)
     #entry for title
-    bookInfo2 = Entry(LabelFrame,width=50)
+    bookInfo2 = Label(LabelFrame,fg='white',text='',bg='#3c40c6',font=('rubik',10))
     bookInfo2.place(x=150, y=120)
 
     #author
     author_label = Label(LabelFrame, text="Author: ", bg="#3c40c6", fg="white")
     author_label.place(x=30,y=160)
     #entry for title
-    bookInfo3 = Entry(LabelFrame,width=50)
+    bookInfo3 = Label(LabelFrame,fg='white',text='',bg='#3c40c6',font=('rubik',10))
     bookInfo3.place(x=150, y=160)
 
     #Status
     status_label = Label(LabelFrame, text="Status: ", bg="#3c40c6", fg="white")
     status_label.place(x=30,y=200)
     #entry for title
-    bookInfo4 = Entry(LabelFrame,width=50)
+    bookInfo4 = Label(LabelFrame,fg='white',text='',bg='#3c40c6',font=('rubik',10))
     bookInfo4.place(x=150, y=200)
 
 
