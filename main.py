@@ -4,6 +4,7 @@ import pymysql
 from AddBook import *
 from ViewBooks import *
 from UpdateBook import updateBook
+from searchBook import searchBook
 from DeleteBook import *
 
 
@@ -47,11 +48,17 @@ update = Button(update_frame, text="Update Book", bg="white", bd=0 , width=35 ,f
 update.pack(fill='both',ipady=12)
 search_frame = Frame(root, bg="#3c40c6", bd=5)
 search_frame.pack(pady=10)
-search = Button(search_frame, text="Search Book", bg="white", bd=0 , width=35 ,fg="#3c40c6")
+search = Button(search_frame, text="Search Book", bg="white", bd=0 , width=35 ,fg="#3c40c6",command=searchBook)
 search.pack(fill='both',ipady=12)
 delete_frame = Frame(root, bg="#ff3f34", bd=5)
 delete_frame.pack(pady=10)
 delete = Button(delete_frame, text="Delete Book", bg="white", bd=0 , width=35 ,fg="#ff3f34", command=delete)
 delete.pack(fill='both',ipady=12)
+# ###############
+exit_frame = Frame(root, bg="#FF8E00", bd=5)
+exit_frame.pack(pady=10)
+exit = Button(exit_frame, text="exit", bg="white", bd=0 , width=12 ,fg="#ff3f34", command=exit)
+exit.pack(fill='both',ipady=12)
+
 
 root.mainloop() #call the mainloop to run the application
