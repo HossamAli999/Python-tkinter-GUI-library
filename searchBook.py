@@ -73,27 +73,28 @@ def searchBook():
     bookInfo1.place(x=150, y=40)
 
     update = Button(LabelFrame, text="Search", bg="#575fcf", bd=0 , width=20 ,fg="white",command=getBook)
-    update.place(x=309,y=80)
+    update.place(x=220,y=80)
 
     #title
+
     title_label = Label(LabelFrame, text="Title: ", bg="#3c40c6", fg="white")
     title_label.place(x=30,y=120)
     #entry for title
-    bookInfo2 = Label(LabelFrame,fg='white',text='',bg='#3c40c6',font=('rubik',10))
+    bookInfo2 = Label(LabelFrame,fg='black',text='',bg='white',width=20,font=('rubik',10))
     bookInfo2.place(x=150, y=120)
 
     #author
     author_label = Label(LabelFrame, text="Author: ", bg="#3c40c6", fg="white")
     author_label.place(x=30,y=160)
     #entry for title
-    bookInfo3 = Label(LabelFrame,fg='white',text='',bg='#3c40c6',font=('rubik',10))
+    bookInfo3 = Label(LabelFrame,fg='black',text='',bg='white',width=20,font=('rubik',10))
     bookInfo3.place(x=150, y=160)
 
     #Status
     status_label = Label(LabelFrame, text="Status: ", bg="#3c40c6", fg="white")
     status_label.place(x=30,y=200)
     #entry for title
-    bookInfo4 = Label(LabelFrame,fg='white',text='',bg='#3c40c6',font=('rubik',10))
+    bookInfo4 = Label(LabelFrame,fg='black',text='',bg='white',width=20,font=('rubik',10))
     bookInfo4.place(x=150, y=200)
 
 
