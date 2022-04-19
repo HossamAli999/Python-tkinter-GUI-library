@@ -20,7 +20,9 @@ def deleteBook():
     deleteIssue = "delete from "+issue_Table+ " where bid = '" +bid+"' "
 
     try:
-        cur.execute(deleteSql)
+        sql = "delete from book where bid = %s"
+        val = (bid,)
+        cur.execute(sql, val)
         con.commit()
         cur.execute(deleteIssue)
         con.commit()
