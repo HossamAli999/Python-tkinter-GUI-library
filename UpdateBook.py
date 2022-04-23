@@ -95,31 +95,31 @@ def updateBook():
     id_label = Label(LabelFrame, text="Book Id: ", bg="#3c40c6", fg="white")
     id_label.place(x=30, y=40)
     #entry label for book Id
-    bookInfo1 = Entry(LabelFrame,width=50)
+    bookInfo1 = Entry(LabelFrame,width=27)
     bookInfo1.place(x=150, y=40)
 
-    update = Button(LabelFrame, text="Get Book", bg="#575fcf", bd=0 , width=20 ,fg="white",command=getBook)
-    update.place(x=309,y=80)
+    update = Button(LabelFrame, text="Get Book", bg="#575fcf", bd=0 , width=23 ,fg="white",command=getBook)
+    update.place(x=150,y=80)
 
     #title
     title_label = Label(LabelFrame, text="Title: ", bg="#3c40c6", fg="white")
     title_label.place(x=30,y=120)
     #entry for title
-    bookInfo2 = Entry(LabelFrame,width=50)
+    bookInfo2 = Entry(LabelFrame,width=27)
     bookInfo2.place(x=150, y=120)
 
     #author
     author_label = Label(LabelFrame, text="Author: ", bg="#3c40c6", fg="white")
     author_label.place(x=30,y=160)
     #entry for title
-    bookInfo3 = Entry(LabelFrame,width=50)
+    bookInfo3 = Entry(LabelFrame,width=27)
     bookInfo3.place(x=150, y=160)
 
     #Status
     status_label = Label(LabelFrame, text="Status: ", bg="#3c40c6", fg="white")
     status_label.place(x=30,y=200)
     #entry for title
-    bookInfo4 = Entry(LabelFrame,width=50)
+    bookInfo4 = Entry(LabelFrame,width=27)
     bookInfo4.place(x=150, y=200)
 
     #submit Button
