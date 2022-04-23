@@ -13,25 +13,25 @@ cur = con.cursor()
 bookTable = "book"
 issue_Table = "books_issued"
 
+def deleteBookDialog():
+    result = messagebox.askquestion("Delete", "You Want to Delete That Book?", icon='warning')
+    if result == 'yes':
+        deleteBook()
+    else:
+        messagebox.showinfo("Info", "Book Not Deleted")
+
+
 def deleteBook():
     bid = bookInfo1.get()
-
-    deleteSql = "delete from "+ bookTable+ "where bid = '" +bid+"'"
-    deleteIssue = "delete from "+issue_Table+ " where bid = '" +bid+"' "
 
     try:
         sql = "delete from book where bid = %s"
         val = (bid,)
         cur.execute(sql, val)
         con.commit()
-        cur.execute(deleteIssue)
-        con.commit()
         messagebox.showinfo("Success", "Book Deleted Successfully")
-
     except:
-        messagebox.showinfo("Error", "Please check Book Id")
-
-    # print(bid)
+        messagebox.showinfo("Error", "Something Went Wrong!")
 
     bookInfo1.delete(0, END)
     root.destroy()
@@ -67,7 +67,7 @@ def delete():
     bookInfo1.place(relx=0.3, rely=0.5, relwidth=0.62)
 
     #submit button    
-    submitBtn = Button(root, text="Submit", bg="lightblue", fg="black", command=deleteBook)
+    submitBtn = Button(root, text="Submit", bg="lightblue", fg="black", command=deleteBookDialog)
     submitBtn.place(relx=0.28, rely=0.9, relwidth=0.18, relheight=0.08)
 
     quitBtn = Button(root, text="Quit", bg="lightblue", fg="black", command=root.destroy)

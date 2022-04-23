@@ -69,11 +69,11 @@ def searchBook():
     id_label = Label(LabelFrame, text="Book Id: ", bg="#3c40c6", fg="white")
     id_label.place(x=30, y=40)
     #entry label for book Id
-    bookInfo1 = Entry(LabelFrame,width=50)
+    bookInfo1 = Entry(LabelFrame,width=27)
     bookInfo1.place(x=150, y=40)
 
-    update = Button(LabelFrame, text="Search", bg="#575fcf", bd=0 , width=20 ,fg="white",command=getBook)
-    update.place(x=220,y=80)
+    update = Button(LabelFrame, text="Search", bg="#575fcf", bd=0 , width=23 ,fg="white",command=getBook)
+    update.place(x=150,y=80)
 
     #title
 
