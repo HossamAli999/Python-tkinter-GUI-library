@@ -1,3 +1,5 @@
+from lib2to3.pgen2.token import EQUAL
+from queue import Empty
 from tkinter import *
 from tkinter import messagebox
 from PIL import Image, ImageTk
@@ -19,6 +21,25 @@ def deleteBookDialog():
         deleteBook()
     else:
         messagebox.showinfo("Info", "Book Not Deleted")
+
+def checkID():
+    bid = bookInfo1.get()
+
+    # check input is integer or not
+    try:
+        sql_select_query = """select * from book where bid = %s"""
+        # set variable in query
+        cur.execute(sql_select_query, (bid,))
+        # fetch result
+        record = cur.fetchall()
+        print(record)
+        if len(record) != 0:
+            deleteBookDialog()
+        else:
+            messagebox.showinfo('Error', "You Entered Wrong ID")
+
+    except : 
+        print("Database error")         
 
 
 def deleteBook():
@@ -67,7 +88,7 @@ def delete():
     bookInfo1.place(relx=0.3, rely=0.5, relwidth=0.62)
 
     #submit button    
-    submitBtn = Button(root, text="Submit", bg="lightblue", fg="black", command=deleteBookDialog)
+    submitBtn = Button(root, text="Submit", bg="lightblue", fg="black", command=checkID)
     submitBtn.place(relx=0.28, rely=0.9, relwidth=0.18, relheight=0.08)
 
     quitBtn = Button(root, text="Quit", bg="lightblue", fg="black", command=root.destroy)
